@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 // import { Box } from './Feedback.styled';
 
 export default class Feedback extends Component {
-  static valueI = {
-    total: 0,
-  };
-  state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
+  static total = null;
+  static positiveFeetback = null;
+
+  // state = {
+  //   good: 0,
+  //   neutral: 0,
+  //   bad: 0,
+  // };
 
   handleClickGood = () => {
     this.setState(prevState => {
@@ -31,11 +31,15 @@ export default class Feedback extends Component {
   };
 
   countTotalFeedback = () => {
-    // const { good, neutral, bad } = this.state;
-    // return good + neutral + bad;
-    // return this.state.bad;
+    const { good, neutral, bad } = this.state;
+
+    return (this.total = good + neutral + bad);
   };
-  countPositiveFeedbackPercentage = () => {};
+
+  countPositiveFeedbackPercentage = () => {
+    const { good } = this.state;
+    return (this.positiveFeetback = Math.ceil((good / this.total) * 100));
+  };
 
   render() {
     return (
@@ -54,8 +58,8 @@ export default class Feedback extends Component {
         <p>Good: {this.state.good}</p>
         <p>Neutral: {this.state.neutral}</p>
         <p>Bad: {this.state.bad}</p>
-        <p>Total: {}</p>
-        <p>Positive feetback: {}%</p>
+        <p>Total: {this.countTotalFeedback()}</p>
+        <p>Positive feetback: {this.countPositiveFeedbackPercentage()}%</p>
       </div>
     );
   }
