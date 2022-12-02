@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { GlobalStyle } from './GlobalStyle';
-
+import { Section } from './Section/Section';
 import { Statistics } from './Statistics/Statistics';
 
 export class App extends Component {
@@ -32,18 +32,22 @@ export class App extends Component {
 
     return (
       <>
-        <h2>Please leave feedback</h2>
-        <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
-          onLeaveFeedback={this.handleClick}
-        />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={this.countTotalFeedback()}
-          positiveFeetback={this.countPositiveFeedbackPercentage()}
-        />
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.handleClick}
+          />
+        </Section>
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={this.countTotalFeedback()}
+            positiveFeetback={this.countPositiveFeedbackPercentage()}
+          />
+        </Section>
+
         <GlobalStyle />
       </>
     );

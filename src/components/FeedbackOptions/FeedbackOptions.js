@@ -1,6 +1,6 @@
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div>
+    <>
       {options.map((option, index) => (
         <button
           key={index}
@@ -11,6 +11,6 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           {option}
         </button>
       ))}
-    </div>
+    </>
   );
 };
