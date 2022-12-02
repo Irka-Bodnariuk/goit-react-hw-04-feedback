@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
 
-
 export const GlobalStyle = createGlobalStyle`
  body {
   margin: 0;
@@ -13,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Mesnlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 `;
