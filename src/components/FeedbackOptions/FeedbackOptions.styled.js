@@ -7,6 +7,8 @@ export const ListButton = styled.div`
 `;
 
 export const Button = styled.button`
+  width: 70px;
+  padding: 6px;
   text-transform: capitalize;
   background-color: #ddedef;
   border-radius: 4px;
